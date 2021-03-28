@@ -18,9 +18,9 @@ import {
 
 import { LinearGradient } from "expo-linear-gradient";
 
-const options = ["PKR", "Yen", "USD", "CAD", "EUR", "AUD", "NZD", "CHF"];
+const options = ["BTC", "DSH", "Aur", "Devc", "Lite", "ETH", "Peer", "RIPP"];
 
-export default function ConvertCurrency({ navigation }) {
+export default function ConvertCrypto({ navigation }) {
   const [number, onChangeNumber] = React.useState(null);
   const [number2, onChangeNumber2] = React.useState(null);
   const [selected, setSelected] = useState();
@@ -58,7 +58,7 @@ export default function ConvertCurrency({ navigation }) {
             height: 280,
             marginBottom: 30,
           }}
-          source={require("../Images/cur.png")}
+          source={require("../Images/bitcoin.png")}
         />
         <Text
           style={{
@@ -206,10 +206,10 @@ export default function ConvertCurrency({ navigation }) {
           }}
         >
           <Text style={{ fontWeight: "bold", color: "#000000" }}>
-            Currency rate
+            Coin rate
           </Text>
           <Text style={{ fontWeight: "bold", color: "tomato" }}>
-            1 USD = 157.2 PKR
+            1 BTC = 8,650,906.59 PKR
           </Text>
         </View>
 

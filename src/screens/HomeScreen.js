@@ -41,7 +41,7 @@ export default function HomeScreen({navigation}) {
         </Text>
 
         <View style={styles.rightIcon}>
-          <MaterialIcons name="notifications-none" size={24} color="white" />
+          <MaterialIcons onPress={()=>navigation.navigate('CryptoExchange')} name="notifications-none" size={24} color="white" />
         </View>
       </View>
 

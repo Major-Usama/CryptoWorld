@@ -60,7 +60,7 @@ export default function HomeChart() {
         </Text>
 
         <View style={styles.rightIcon}>
-          <AntDesign name="sharealt" size={24} color="#ffffff" />
+          <AntDesign onPress={()=>navigation.navigate('BankDepositScreen')} name="sharealt" size={24} color="#ffffff" />
         </View>
       </View>
 

@@ -10,6 +10,9 @@ import RegistrationScreen from "../screens/RegistrationScreen";
 import HomePriceClickScreen from "../screens/HomePriceClickScreen";
 import CurrencyExchange from "../screens/CurrencyExchange";
 import ConvertCurrency from "../screens/ConvertCurrency";
+import CryptoExchange from "../screens/CryptoExchange";
+import ConvertCrypto from "../screens/ConvertCrypto";
+import BankDepositScreen from "../screens/BankDepositScreen";
 
 const Stack = createStackNavigator();
 
@@ -26,10 +29,16 @@ function Navigation() {
         />
         <Stack.Screen name="CurrencyExchange" component={CurrencyExchange} />
         <Stack.Screen name="ConvertCurrency" component={ConvertCurrency} />
+        <Stack.Screen name="CryptoExchange" component={CryptoExchange} />
+        <Stack.Screen name="ConvertCrypto" component={ConvertCrypto} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen
           name="HomePriceClickScreen"
           component={HomePriceClickScreen}
+        />
+         <Stack.Screen
+          name="BankDepositScreen"
+          component={BankDepositScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
