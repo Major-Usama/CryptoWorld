@@ -4,9 +4,7 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  Image,
-  TouchableOpacity,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
@@ -14,17 +12,18 @@ import {
 } from "react-native-responsive-screen";
 import {
   FontAwesome,
-  AntDesign,
-  Entypo,
-  FontAwesome5,
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 
 import { useNavigation } from "@react-navigation/native";
-import { color } from "react-native-reanimated";
 
-const eth = [<MaterialCommunityIcons name="sort-ascending" size={20} color="white" />];
-const bit = [<MaterialCommunityIcons name="sort-descending" size={20} color="#ffffff" />];
+
+const eth = [
+  <MaterialCommunityIcons name="sort-ascending" size={20} color="white" />,
+];
+const bit = [
+  <MaterialCommunityIcons name="sort-descending" size={20} color="#ffffff" />,
+];
 const lite = [
   <MaterialCommunityIcons name="litecoin" size={24} color="powderblue" />,
 ];
@@ -93,7 +92,7 @@ export default function WalletFlat() {
       <FlatList
         showsVerticalScrollIndicator={false}
         scrollEnabled={true}
-        keyExtractor={(item,index) => index}
+        keyExtractor={(item, index) => index}
         data={gallery}
         renderItem={({ item }) => {
           return (
@@ -121,25 +120,24 @@ export default function WalletFlat() {
                       style={{
                         fontSize: 16,
                         color: "#ffffff",
-                         
+
                         fontWeight: "bold",
                       }}
                     >
                       {item.title}
                     </Text>
-                    <Text style={{ color: "#ffffff", opacity: 0.8 ,fontSize:12}}>
+                    <Text
+                      style={{ color: "#ffffff", opacity: 0.8, fontSize: 12 }}
+                    >
                       {item.subtitle}
                     </Text>
                   </View>
                 </View>
 
                 <View style={styles.listContainer}>
-                 
-
                   <View style={{ marginLeft: 10 }}>
-                      {item.subtitle==="Deposit" ?
-                    (
-                        <Text
+                    {item.subtitle === "Deposit" ? (
+                      <Text
                         style={{
                           fontSize: 16,
                           color: "lightgreen",
@@ -148,22 +146,21 @@ export default function WalletFlat() {
                       >
                         {item.price}
                       </Text>
-                    )  :
-                    
+                    ) : (
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: "tomato",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        {item.price}
+                      </Text>
+                    )}
+
                     <Text
-                    style={{
-                      fontSize: 16,
-                      color: "tomato",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    {item.price}
-                  </Text>
-                    }
-                 
-
-
-                    <Text style={{ color: "#ffffff", opacity: 0.8 ,fontSize:12}}>
+                      style={{ color: "#ffffff", opacity: 0.8, fontSize: 12 }}
+                    >
                       {item.marketcap}
                     </Text>
                   </View>

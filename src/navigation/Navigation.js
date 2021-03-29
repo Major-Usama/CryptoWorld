@@ -13,6 +13,8 @@ import ConvertCurrency from "../screens/ConvertCurrency";
 import CryptoExchange from "../screens/CryptoExchange";
 import ConvertCrypto from "../screens/ConvertCrypto";
 import BankDepositScreen from "../screens/BankDepositScreen";
+import PaymentMethod from "../screens/PaymentMethod";
+import AddCard from '../screens/AddCard'
 
 const Stack = createStackNavigator();
 
@@ -39,6 +41,15 @@ function Navigation() {
          <Stack.Screen
           name="BankDepositScreen"
           component={BankDepositScreen}
+        />
+
+              <Stack.Screen
+          name="PaymentMethod"
+          component={PaymentMethod}
+        />
+             <Stack.Screen
+          name="AddCard"
+          component={AddCard}
         />
       </Stack.Navigator>
     </NavigationContainer>
