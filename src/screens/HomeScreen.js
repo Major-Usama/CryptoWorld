@@ -15,20 +15,23 @@ import {
 } from "react-native-responsive-screen";
 
 import HomeFlat from "../components/HomeFlat";
-import { TouchableOpacity, TouchableWithoutFeedback } from "react-native-gesture-handler";
+import {
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+} from "react-native-gesture-handler";
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({ navigation }) {
   const [number, onChangeNumber] = React.useState(null);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
-        <TouchableWithoutFeedback onPress={()=>navigation.navigate('CurrencyExchange')}>
-
-        <View style={styles.leftIcon}>
-          <MaterialIcons name="timeline" size={24} color="white" />
-        </View>
-        
-         </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback
+         
+        >
+          <View style={styles.leftIcon}>
+            <MaterialIcons name="timeline" size={24} color="white" />
+          </View>
+        </TouchableWithoutFeedback>
         <Text
           style={{
             color: "#ffffff",
@@ -41,7 +44,12 @@ export default function HomeScreen({navigation}) {
         </Text>
 
         <View style={styles.rightIcon}>
-          <MaterialIcons onPress={()=>navigation.navigate('CryptoExchange')} name="notifications-none" size={24} color="white" />
+          <MaterialIcons
+          
+            name="notifications-none"
+            size={24}
+            color="white"
+          />
         </View>
       </View>
 

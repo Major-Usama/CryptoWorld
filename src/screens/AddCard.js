@@ -1,4 +1,4 @@
-// 
+//
 
 import React, { useState } from "react";
 import {
@@ -18,7 +18,10 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
-import { CreditCardInput, LiteCreditCardInput } from "react-native-credit-card-input"; // 0.4.1
+import {
+  CreditCardInput,
+  LiteCreditCardInput,
+} from "react-native-credit-card-input"; // 0.4.1
 
 const styles = StyleSheet.create({
   switch: {
@@ -46,7 +49,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     borderTopLeftRadius: 50,
     borderTopRightRadius: 50,
-    paddingTop:50
+    paddingTop: 50,
   },
 
   leftIcon: {
@@ -69,13 +72,13 @@ const styles = StyleSheet.create({
   },
 });
 
-
 export default class AddCard extends React.Component {
   state = { useLiteCreditCardInput: false };
 
   _onChange = (formData) => console.log(JSON.stringify(formData, null, " "));
   _onFocus = (field) => console.log("focusing", field);
-  _setUseLiteCreditCardInput = (useLiteCreditCardInput) => this.setState({ useLiteCreditCardInput });
+  _setUseLiteCreditCardInput = (useLiteCreditCardInput) =>
+    this.setState({ useLiteCreditCardInput });
 
   render() {
     return (
@@ -85,47 +88,45 @@ export default class AddCard extends React.Component {
           onValueChange={this._setUseLiteCreditCardInput}
           value={this.state.useLiteCreditCardInput} /> */}
 
-<View
-        style={{
-          flexDirection: "row",
-          marginTop: 20,
-
-          alignItems: "center",
-          paddingHorizontal: 20,
-          width: wp("100%"),
-          justifyContent: "space-between",
-        }}
-      >
-        <View style={styles.leftIcon}>
-          <Ionicons
-            onPress={() => this.props.navigation.goBack()}
-            name="ios-arrow-back"
-            size={24}
-            color="#ffffff"
-          />
-        </View>
-
-        <Text style={styles.headerText}>Add Card</Text>
-
-        <View />
-      </View>
-      <View style={styles.footer}>
-
-      <LinearGradient
-          colors={["#5f0a87", "#a4508b"]}
+        <View
           style={{
-            borderRadius: 14,
-            padding: 16,
-            marginTop: "10%",
+            flexDirection: "row",
+            marginTop: 20,
+
             alignItems: "center",
-            marginBottom:20,
-            width:wp('80%'),
-            alignSelf:'center'
+            paddingHorizontal: 20,
+            width: wp("100%"),
+            justifyContent: "space-between",
           }}
         >
-        
+          <View style={styles.leftIcon}>
+            <Ionicons
+              onPress={() => this.props.navigation.goBack()}
+              name="ios-arrow-back"
+              size={24}
+              color="#ffffff"
+            />
+          </View>
+
+          <Text style={styles.headerText}>Add Card</Text>
+
+          <View />
+        </View>
+        <View style={styles.footer}>
+          <LinearGradient
+            colors={["#5f0a87", "#a4508b"]}
+            style={{
+              borderRadius: 14,
+              padding: 16,
+              marginTop: "10%",
+              alignItems: "center",
+              marginBottom: 20,
+              width: wp("80%"),
+              alignSelf: "center",
+            }}
+          >
             <TouchableOpacity
-              style={{ width: "100%", alignItems: "center", }}
+              style={{ width: "100%", alignItems: "center" }}
               onPress={() => navigation.navigate("Home")}
               activeOpacity={0.9}
             >
@@ -136,27 +137,21 @@ export default class AddCard extends React.Component {
                 Deposit
               </Text>
             </TouchableOpacity>
-        
-        </LinearGradient>
-      <CreditCardInput
-              autoFocus
-              requiresName
-              requiresCVC
-            
-              cardScale={1.2}
-              labelStyle={styles.label}
-              inputStyle={styles.input}
-              validColor={"black"}
-              invalidColor={"red"}
-              placeholderColor={"darkgray"}
-
-              onFocus={this._onFocus}
-              onChange={this._onChange} />
-
-      </View>
-           
-          
-        
+          </LinearGradient>
+          <CreditCardInput
+            autoFocus
+            requiresName
+            requiresCVC
+            cardScale={1.2}
+            labelStyle={styles.label}
+            inputStyle={styles.input}
+            validColor={"black"}
+            invalidColor={"red"}
+            placeholderColor={"darkgray"}
+            onFocus={this._onFocus}
+            onChange={this._onChange}
+          />
+        </View>
       </View>
     );
   }

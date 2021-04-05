@@ -6,7 +6,7 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
@@ -28,6 +28,8 @@ const lite = [
   <MaterialCommunityIcons name="litecoin" size={24} color="powderblue" />,
 ];
 const via = [<FontAwesome name="viacoin" size={24} color="tomato" />];
+
+import * as Animatable from "react-native-animatable";
 
 export default function HomeFlat() {
   const navigation = useNavigation();
@@ -88,11 +90,11 @@ export default function HomeFlat() {
   ]);
 
   return (
-    <View style={styles.mainWrapper}>
+    <Animatable.View animation="fadeInUpBig" style={styles.mainWrapper}>
       <FlatList
         showsVerticalScrollIndicator={false}
         scrollEnabled={true}
-        keyExtractor={(item,index) => index}
+        keyExtractor={(item, index) => index}
         data={gallery}
         renderItem={({ item }) => {
           return (
@@ -166,7 +168,7 @@ export default function HomeFlat() {
           );
         }}
       />
-    </View>
+    </Animatable.View>
   );
 }
 

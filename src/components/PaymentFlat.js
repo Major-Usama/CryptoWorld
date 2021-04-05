@@ -146,5 +146,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     justifyContent: "center",
     elevation: 5,
+    marginBottom:20
   },
 });

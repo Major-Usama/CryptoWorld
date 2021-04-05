@@ -28,7 +28,7 @@ import {
 } from "react-native-responsive-screen";
 const HEIGHT = Dimensions.get('screen').height;
 const WIDTH = Dimensions.get('screen').width;
-
+import * as Animatable from 'react-native-animatable';
 
 export default function RegistrationScreen({navigation}) {
   const[mail,setmail] =useState("")
@@ -36,7 +36,6 @@ export default function RegistrationScreen({navigation}) {
   const [confirmPassword, setConfirmPassword] = useState('')
   const[firstName,setFirstName] =useState("")
   const[lastName,setLastName] =useState("")
-  const[mobile,setMobile] =useState("")
   const [visible,setVisible]=useState(false);
   const [hide,setHide]=useState(true)
   const [hide1,setHide1]=useState(true)
@@ -101,7 +100,8 @@ setHide1(!hide1);
         // showsVerticalScrollIndicator={false}>
        >
        <View style={{marginHorizontal:'4%'}}>
-            <Image
+            < Animatable.Image
+            animation="slideInRight"
                  source={require('../Images/logoc.jpeg')}
               style={styles.image}
             />

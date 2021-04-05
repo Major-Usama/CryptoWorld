@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import RBSheet from "react-native-raw-bottom-sheet";
 import WelcomeComponent from "../components/WelcomeComponent";
-
+import * as Animatable from "react-native-animatable";
 // import Welcome from "./Welcome";
 
 export default function Welcome({ navigation }) {
@@ -34,45 +34,47 @@ export default function Welcome({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topText}>
+      <Animatable.View animation="fadeInUpBig" style={styles.topText}>
         <Text style={styles.io}>3Oi</Text>
         <Text style={styles.welcome}>Welcome</Text>
-      </View>
+      </Animatable.View>
 
-      <RBSheet
-        animationType="fade"
-        openDuration={100}
-        ref={refRBSheet}
-        closeOnDragDown={true}
-        closeOnPressMask={true}
-        closeOnPressBack={true}
-        customStyles={{
-          wrapper: {
-            backgroundColor: "transparent",
-          },
-          container: {
-            backgroundColor: "#19A9C7",
-            flex: 1.8,
-            borderTopRightRadius: 30,
-            borderTopLeftRadius: 30,
-          },
-          draggableIcon: {
-            backgroundColor: "#ffffff",
-          },
-        }}
-      >
-        <View>
-          <Text style={styles.tagLine}>Investing the _________ Way</Text>
-        </View>
-
-        <WelcomeComponent />
-
-        <TouchableOpacity onPress={close}>
-          <View style={styles.joinNow}>
-            <Text style={{ fontSize: 20, color: "#ffffff" }}>Join Now</Text>
+      <Animatable.View animation="fadeOutUpBig">
+        <RBSheet
+          animationType="slide"
+          openDuration={100}
+          ref={refRBSheet}
+          closeOnDragDown={false}
+          closeOnPressMask={false}
+          closeOnPressBack={false}
+          customStyles={{
+            wrapper: {
+              backgroundColor: "transparent",
+            },
+            container: {
+              backgroundColor: "#19A9C7",
+              flex: 1.8,
+              borderTopRightRadius: 30,
+              borderTopLeftRadius: 30,
+            },
+            draggableIcon: {
+              backgroundColor: "#ffffff",
+            },
+          }}
+        >
+          <View>
+            <Text style={styles.tagLine}>Investing the _________ Way</Text>
           </View>
-        </TouchableOpacity>
-      </RBSheet>
+
+          <WelcomeComponent />
+
+          <TouchableOpacity onPress={close}>
+            <View style={styles.joinNow}>
+              <Text style={{ fontSize: 20, color: "#ffffff" }}>Join Now</Text>
+            </View>
+          </TouchableOpacity>
+        </RBSheet>
+      </Animatable.View>
     </View>
   );
 }

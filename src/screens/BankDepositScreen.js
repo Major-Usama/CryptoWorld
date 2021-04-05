@@ -28,7 +28,7 @@ export default function BankDepositScreen({ navigation }) {
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <TouchableWithoutFeedback
-          onPress={() => navigation.navigate("CurrencyExchange")}
+          
         >
           <View style={styles.leftIcon}>
             <MaterialIcons name="timeline" size={24} color="white" />

@@ -32,7 +32,7 @@ import RecentActivityFlat from "./RecentActivityFlat";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
-
+import * as Animatable from 'react-native-animatable';
 export default function HomeChart() {
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
@@ -186,7 +186,9 @@ export default function HomeChart() {
 
       {/* Modal */}
 
-      <View style={styles.centeredView}>
+      <Animatable.View
+      animation="zoomInUp"
+      style={styles.centeredView}>
         <Modal
           animationType="slide"
           transparent={true}
@@ -428,7 +430,7 @@ export default function HomeChart() {
             </View>
           </View>
         </Modal>
-      </View>
+      </Animatable.View>
     </View>
   );
 }

@@ -8,6 +8,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { Ionicons, AntDesign, MaterialIcons } from "@expo/vector-icons";
 
@@ -66,6 +67,7 @@ export default function PaymentMethod({ navigation }) {
          
          <View >
         <PaymentFlat />
+       
         <TouchableOpacity onPress={() => navigation.navigate("AddCard")}>
         <View style={styles.addCard}>
         
@@ -74,6 +76,7 @@ export default function PaymentMethod({ navigation }) {
 
         </View>
         </TouchableOpacity>
+   
         </View>
 
 
@@ -127,17 +130,19 @@ const styles = StyleSheet.create({
   {
      
         width:wp('90%'),
-       height:hp('12.5%'),
+       height:hp('10%'),
        backgroundColor:'#ffffff',
        borderWidth:3,
        borderColor:'#137383',
        borderRadius:5,
        borderStyle:'dotted',
-       marginTop:20,
+       
        alignSelf:'center',
        alignItems:'center',
        justifyContent:'space-evenly',
        flexDirection:'row',
+      
+       
        
        
     },

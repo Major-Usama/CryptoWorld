@@ -17,7 +17,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
-
+import * as Animatable from 'react-native-animatable';
 const HEIGHT = Dimensions.get("screen").height;
 const WIDTH = Dimensions.get("screen").width;
 
@@ -73,7 +73,8 @@ function LoginScreen({ navigation }) {
         </Text>
       </Text> */}
 
-        <Image
+        <Animatable.Image
+        animation="slideInLeft"
           style={{
             width: 150,
             height: 150,

@@ -8,6 +8,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { Ionicons, AntDesign, MaterialIcons } from "@expo/vector-icons";
 import SelectPicker from "react-native-form-select-picker";
@@ -51,6 +52,7 @@ export default function ConvertCurrency({ navigation }) {
       </View>
 
       <View style={styles.footer}>
+      <ScrollView>
         <Image
           style={{
             alignSelf: "center",
@@ -60,7 +62,9 @@ export default function ConvertCurrency({ navigation }) {
           }}
           source={require("../Images/cur.png")}
         />
-        <Text
+        
+      
+              <Text
           style={{
             fontWeight: "bold",
             marginLeft: wp("8%"),
@@ -223,6 +227,7 @@ export default function ConvertCurrency({ navigation }) {
             alignItems: "center",
             justifyContent: "center",
             alignSelf: "center",
+            marginBottom:20
           }}
         >
           <TouchableOpacity
@@ -237,6 +242,8 @@ export default function ConvertCurrency({ navigation }) {
             </Text>
           </TouchableOpacity>
         </LinearGradient>
+        </ScrollView>
+
       </View>
     </View>
   );

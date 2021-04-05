@@ -14,7 +14,7 @@ import {
 import VideoLogo from '../components/VideoLogo'
 
 
-
+import * as Animatable from 'react-native-animatable';
 
 export default function SplashVideo({navigation}) {
   useEffect(() => {
@@ -39,7 +39,9 @@ export default function SplashVideo({navigation}) {
         <Text style={styles.pace}>PACE</Text>
       </View> */}
 
-   <Image style={styles.image} source={require('../Images/logoc.jpeg')}/>
+   <Animatable.Image
+   animation="zoomIn"
+   style={styles.image} source={require('../Images/logoc.jpeg')}/>
 
      <VideoLogo />
 
